@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-canvas: #0c0d0e;
+    --bg-surface: #131518;
+    --border-color: #252830;
+    --text-primary: #f3f4f6;
+    --text-muted: #8a909a;
+  }
+
+  * {
+    border-color: var(--border-color);
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Editorial custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0c0d0e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252830;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b404d;
+  }
+}
+
+/* React Flow Overrides for crisp editorial aesthetic */
+.react-flow__background {
+  background-color: #0c0d0e !important;
+}
+
+.react-flow__controls {
+  border: 1px solid #252830 !important;
+  background: #131518 !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: #131518 !important;
+  border-bottom: 1px solid #252830 !important;
+  color: #9ca3af !important;
+  fill: #9ca3af !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #1e2127 !important;
+  color: #f3f4f6 !important;
+  fill: #f3f4f6 !important;
+}
+
+.react-flow__minimap {
+  background-color: #131518 !important;
+  border: 1px solid #252830 !important;
+  border-radius: 4px !important;
+}
+
+.react-flow__handle {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 2px !important;
+  background-color: #4b5563 !important;
+  border: 1px solid #131518 !important;
+  transition: background-color 0.15s ease;
+}
+
+.react-flow__handle:hover {
+  background-color: #f59e0b !important;
+}
+
+.react-flow__edge-path {
+  stroke: #333842 !important;
+  stroke-width: 1.5px !important;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke: #f59e0b !important;
+  stroke-dasharray: 5 !important;
+  animation: dashdraw 0.5s linear infinite !important;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
